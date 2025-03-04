@@ -2,24 +2,28 @@
 
 :root {
  --body-background:#EEFCF2;
-}
-
-
-
-
-body{
-  max-width: 1440px;
-  margin: 0 auto;
-  overflow: hidden;
-}
-
+} 
 .circle{
   position: relative;
-  width:1000px;
-  height: 1000px;
+  /* width:1000px;
+  height: 1000px; */
 z-index: -1;
-  border-radius: 100%;
+  border-radius: 50%;
   background:var(--body-background);
-  top: -600px;
-  right: -600px;
+  top: -850px;
+  right: -400px;
+  width: 1176px;
+  height: 1176px;
+}
+.circle-img{
+  position: absolute;
+  bottom: -100PX;
+  right: 455px;
+} 
+.circle-alt{
+  position: absolute;
+  bottom: -100PX;
+  right: 455px;
+  display: flex;
+  border-radius: 50%;
 }
