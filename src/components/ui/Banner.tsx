@@ -1,42 +1,43 @@
 'use client';
 
-import Image from "next/image";
-const members = [
-  { id: 1, src: '/banner/image-1.png', name: 'Member 1' },
-  { id: 2, src: '/banner/image-2.png', name: 'Member 2' },
-  { id: 3, src: '/banner/image-3.png', name: 'Member 3' },
-  { id: 4, src: '/banner/image-4.png', name: 'Member 4' },
-  { id: 5, src: '/banner/image-5.png', name: 'Member 5' },
-];
+
+import Link from "next/link";
+import TrustedPartner from "./trustedPartner";
+import CircleComponent from "./circle";
+
 const BannerComponent = ()=>{
     return(
         <>
-        <div className="max-w-[1280px]">
-          <div className="flex flex-col justify-center gap-10">
-            <div className="flex">
-               <h1>Your Global 
+        <div className="container relative  mx-auto  h-[800px]">
+           <div className="py-16 mx-auto">
+               <div className="flex flex-col justify-center gap-10 mt-32">
+               <h1 className="text-5xl tracking-wide font-medium">Your Global <br />
                Dream Starts Here</h1>
+               </div>
+           </div>
+           <div className=" mx-auto">
+           <ul className="flex gap-20">
+                <li><div>
+                  <h4 className="font-bold text-2xl">15000+</h4>
+                  <p className="text-lg">students trained</p>
+                  </div></li>
+                  <span className="circle-bord"></span>
+                  <li><div >
+                  <p  className="text-lg">pick from</p>
+                  <h4 className="font-bold text-2xl">80000+ courses</h4>
+                  </div></li>
+              </ul>
+           </div>
+        
+            <div className="flex mt-16">
+              <Link href="#" className="circle-btn">Lets’s The Action Plan  </Link>
             </div>
-            <div className="circle">
-            <div>
-                 <div className="circle-img">
-                     <Image src={'/banner/group-1.png'} width={272} height={358.15020751953125} alt="circle-img"/>
-                 </div>
-                 <div className="circle-alt ">
-                  {
-                    members.map((data=>(
-                      <>
-                        <Image src={data.src} alt={data.name} width={64} height={64}/>
-                      </>
-                    )))
-                  }
-                 </div>
-           
-            </div>
-            </div>
-         
 
-          </div>
+             <div className="mt-4">
+            <TrustedPartner/>
+             </div>
+
+          <CircleComponent/>
        
         </div>
         </>

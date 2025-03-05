@@ -20,19 +20,7 @@ const NavbarComponent = () => {
 
   return (
     <div>
-      <div className="bg-transparent z-10  h-[38px] w-full">
-        <div className="max-w-7xl mx-auto  sm:px-6 lg:px-8">
-          <Link href={"/om-invents"}>
-            <Image
-              src={"/logo/image.png"}
-              width={300}
-              height={50}
-              className="h-[32px] my-auto"
-              alt="partner brand logo"
-            />
-          </Link>
-        </div>
-      </div>
+   
       <nav className="bg-transparent  z-50 left-0 right-0 py-1">
         <div className="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16">
