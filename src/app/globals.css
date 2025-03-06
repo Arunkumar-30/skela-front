@@ -6,6 +6,9 @@
   --subtitle:#FFA03F;
   --ptext:#6A6A6A;
   --cardbackground:#E7FBED;
+  --h2color:#E5E5E5;
+  --dropdowntext:#737373;
+  --imagebackground:#FFEEEE;
   } 
 
 
@@ -224,3 +227,43 @@ right: 60px;
   top: 50px;
   right: 90px;
 }
+
+/* .contain{
+  position: relative;
+}
+.middle{
+  position: absolute;
+  bottom: 50px;
+  left: 40px;
+  opacity: 0;
+}
+
+.contain:hover .middle{
+  opacity: 1;
+} */
+
+
+
+
+
+/* Rectangle 702 */
+
+.rect{
+  box-sizing: border-box;
+
+background: rgba(255, 237, 237, 0.37);
+backdrop-filter: blur(27.5px);
+}
+
+.load{
+  background:white;
+  box-shadow: 8.79358px 4.7965px 24.7819px #EBEBEB;
+  border-radius: 15.9883px 15.9883px 0px 0px;
+  
+}
+
+
+
+
+
+
