@@ -5,10 +5,11 @@ import CountryComponent from "@/components/ui/Country";
 import LoanComponent from "@/components/ui/Loan";
 import NetworkComponent from "@/components/ui/Network";
 import OurPartnersComponent from "@/components/ui/OurPartners";
-import TrustedPartner from "@/components/ui/OurPartners";
 
 import PortalComponent from "@/components/ui/Portal";
+import SliderNavigation from "@/components/ui/Vertical";
 import WhyChooseUsComponent from "@/components/ui/WhyChooseUs";
+
 import Image from "next/image";
 import Link from "next/link";
 
@@ -67,8 +68,8 @@ export default function Home() {
           />
         </div>
       </div>
-
-      <WhyChooseUsComponent />
+      <SliderNavigation />
+      {/* <WhyChooseUsComponent /> */}
       <CountryComponent />
       <PortalComponent />
       <LoanComponent />

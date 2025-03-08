@@ -4,7 +4,6 @@ import Image from "next/image";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import { div } from "framer-motion/client";
 
 const PortalComponent = () => {
   const images = [
@@ -180,7 +179,7 @@ const PortalComponent = () => {
                 {/* Expanding Content Div */}
                 <div className="absolute rect bottom-0 left-0 w-full  p-4 rounded-t-2xl z-10 transition-all duration-300 h-[80px] group-hover:h-[75%]  group-hover:pb-10 overflow-hidden">
                   {/* Name & Email (Always Visible) */}
-                  <div className="flex  items-center ">
+                  <div className="flex items-center ">
                     <div className="flex-1">
                       <h3 className="text-lg font-bold">{user.name}</h3>
                       <p className="text-sm text-black">{user.email}</p>

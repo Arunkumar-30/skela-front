@@ -39,7 +39,6 @@ const TrustedPartner = () => {
             >
               <img className="h-50 " src="/partner/partner-1.png" alt="" />
             </div>
-          
           </div>
         </div>
       </div>

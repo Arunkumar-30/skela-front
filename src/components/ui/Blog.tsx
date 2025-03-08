@@ -29,6 +29,30 @@ const BlogComponent = () => {
       date: "August 20, 2022",
       authorImage: "/blog/blog-2.jpg",
     },
+    {
+      id: 4,
+      title: "Empowering Students with AI: Shaping the Future of Education",
+      image: "/blog/blog-1.png",
+      author: "Tracey Wilson",
+      date: "August 20, 2022",
+      authorImage: "/blog/blog-2.jpg",
+    },
+    {
+      id: 5,
+      title: "Empowering Students with AI: Shaping the Future of Education",
+      image: "/blog/blog-1.png",
+      author: "Tracey Wilson",
+      date: "August 20, 2022",
+      authorImage: "/blog/blog-2.jpg",
+    },
+    {
+      id: 6,
+      title: "Empowering Students with AI: Shaping the Future of Education",
+      image: "/blog/blog-1.png",
+      author: "Tracey Wilson",
+      date: "August 20, 2022",
+      authorImage: "/blog/blog-2.jpg",
+    },
   ];
   return (
     <>
