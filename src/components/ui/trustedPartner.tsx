@@ -3,7 +3,10 @@ import React from "react";
 const TrustedPartner = () => {
   return (
     <div className="slider-container">
-      <div className="">
+      <div className="flex gap-2">
+        <div className="flex justify-center items-center">
+          <h1 className="font-medium text-xl text-[#0F2F64]">Partner with</h1>
+        </div>
         <div
           className="slider max-w-2xl"
           style={

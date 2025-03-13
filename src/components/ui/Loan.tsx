@@ -5,7 +5,7 @@ import Image from "next/image";
 const LoanComponent = () => {
   return (
     <>
-      <div className="max-w-7xl py-20 mx-auto mt-10 relative">
+      <div className="max-w-7xl py-20 mx-auto mt-10 relative px-5">
         <div>
           <h4 className="text-[var(--subtitle)] text-2xl font-semibold">
             Choose Your Country
@@ -13,7 +13,7 @@ const LoanComponent = () => {
           <h1 className="text-5xl font-bold text-black mb-10">
             The World is your Campus!
           </h1>
-          <div className="flex flex-row lg:flex-row gap-10">
+          <div className="flex flex-col lg:flex-row gap-10">
             <div className="flex-1 space-y-5">
               <div className="relative">
                 <Image

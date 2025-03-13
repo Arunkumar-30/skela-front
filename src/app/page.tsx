@@ -1,6 +1,7 @@
 import NavbarComponent from "@/components/navbar/navbar";
 import BannerComponent from "@/components/ui/Banner";
 import BlogComponent from "@/components/ui/Blog";
+import CircularSlider from "@/components/ui/circle";
 import CountryComponent from "@/components/ui/Country";
 import LoanComponent from "@/components/ui/Loan";
 import NetworkComponent from "@/components/ui/Network";
@@ -20,13 +21,17 @@ export default function Home() {
         <NavbarComponent />
         <BannerComponent />
       </div>
-      <div className="container mx-auto h-[335px] relative">
-        <div className="flex justify-center mb-6 ">
-          <h1 className="text-[40px] text-center font-semibold text-[#0F2F64]">
-            We are an international education <br /> portal with over 10 years
-            of <br /> experience
+      <div className="container mx-auto h-[335px] relative px-5">
+        {/* Heading */}
+        <div className="flex justify-center mb-6">
+          <h1 className="text-[32px] sm:text-[40px] text-center font-semibold text-[#0F2F64]">
+            We are an international education <br className="hidden sm:block" />
+            portal with over 10 years of <br className="hidden sm:block" />
+            experience
           </h1>
         </div>
+
+        {/* Read More Button */}
         <div className="flex justify-center">
           <Link
             href="#"
@@ -35,7 +40,9 @@ export default function Home() {
             Read more
           </Link>
         </div>
-        <div className="element-1">
+
+        {/* Floating Elements - Hidden on Mobile */}
+        <div className="absolute hidden sm:block element-1">
           <Image
             src="/edu-element/element-1.png"
             width={150}
@@ -43,39 +50,48 @@ export default function Home() {
             alt="element-1"
           />
         </div>
-        <div className="element-2">
+
+        <div className="absolute hidden sm:block element-2">
           <Image
             src="/edu-element/element-2.png"
             width={150}
             height={70.25}
-            alt="element-1"
+            alt="element-2"
           />
         </div>
-        <div className="element-3">
+
+        <div className="absolute hidden sm:block element-3 animate-float">
           <Image
             src="/edu-element/element-3.png"
             width={150}
             height={70.25}
-            alt="element-1"
+            alt="element-3"
           />
         </div>
-        <div className="element-4">
+
+        <div className="absolute hidden sm:block element-4 animate-float">
           <Image
             src="/edu-element/element-4.png"
             width={150}
             height={70.25}
-            alt="element-1"
+            alt="element-4"
           />
         </div>
       </div>
-      <SliderNavigation />
+
+      <section>
+        <SliderNavigation />
+      </section>
       {/* <WhyChooseUsComponent /> */}
-      <CountryComponent />
-      <PortalComponent />
-      <LoanComponent />
-      <NetworkComponent />
-      <OurPartnersComponent />
-      <BlogComponent />
+      <section>
+        {" "}
+        <CountryComponent />
+        <PortalComponent />
+        <LoanComponent />
+        <NetworkComponent />
+        <OurPartnersComponent />
+        <BlogComponent />
+      </section>
     </>
   );
 }

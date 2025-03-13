@@ -1,4 +1,4 @@
-"use client";
+"use client"; // Ensure client-side rendering
 
 import Image from "next/image";
 import Link from "next/link";

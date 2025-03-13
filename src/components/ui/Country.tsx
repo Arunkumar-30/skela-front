@@ -66,14 +66,80 @@ const CountryComponent = () => {
         </div>
       </div>
       <div className="max-w-7xl mx-auto ">
-        <div className="grid gap-4 text-center">
-          <Image
-            src="/country/country-map.png"
-            width={500}
-            height={500}
-            className="w-full h-[708px]"
-            alt="country-map"
-          />
+        <div>
+          <div className="grid gap-4 text-center relative">
+            <Image
+              src="/country/country-map.png"
+              width={500}
+              height={500}
+              className="w-full h-[708px]"
+              alt="country-map"
+            />
+            <div className="absolute bottom-50 right-65">
+              <Image
+                src="/country/flag-1.jpg"
+                width={40}
+                height={42}
+                alt="flag-1"
+              />
+            </div>
+            <div className="absolute top-70 right-80">
+              <Image
+                src="/country/flag-2.jpg"
+                width={40}
+                height={42}
+                alt="flag-1"
+              />
+            </div>
+            <div className="absolute top-87 right-101  ">
+              <Image
+                src="/country/flag-3.png"
+                width={40}
+                height={42}
+                alt="flag-1"
+              />
+            </div>
+            <div className="absolute top-70 left-160">
+              <Image
+                src="/country/flag-4.jpg"
+                width={40}
+                height={42}
+                alt="flag-1"
+              />
+            </div>
+            <div className="absolute top-107 left-148">
+              <Image
+                src="/country/flag-5.jpg"
+                width={40}
+                height={42}
+                alt="flag-1"
+              />
+            </div>
+            <div className="absolute bottom-46 left-89">
+              <Image
+                src="/country/flag-6.jpg"
+                width={40}
+                height={42}
+                alt="flag-1"
+              />
+            </div>
+            <div className="absolute top-80 left-77">
+              <Image
+                src="/country/flag-7.jpg"
+                width={40}
+                height={42}
+                alt="flag-1"
+              />
+            </div>
+            <div className="absolute top-68 left-53">
+              <Image
+                src="/country/canda.jpg"
+                width={40}
+                height={42}
+                alt="flag-1"
+              />
+            </div>
+          </div>
         </div>
       </div>
     </>

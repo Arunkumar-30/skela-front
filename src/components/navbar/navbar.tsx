@@ -5,22 +5,21 @@ import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
-
 const NavbarComponent = () => {
   const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
   const route = usePathname();
 
   const navLink = [
-    { href: "/", label: "Home" },
-    { href: "/about", label: "About Om" },
- 
-    { href: "/sustainability", label: "Sustainability" },
-    { href: "/events", label: "Events" },
+    { href: "/", label: "Study Abrod" },
+    { href: "/study-bg", label: "Study Bg" },
+
+    { href: "/course-search", label: "Course Search" },
+    { href: "/pay-uni-fees", label: "Pay Uni Fees" },
+    { href: "/finance", label: "Finance" },
   ];
 
   return (
     <div>
-   
       <nav className="bg-transparent  z-50 left-0 right-0 py-1">
         <div className="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16">
@@ -63,72 +62,45 @@ const NavbarComponent = () => {
               </button>
             </div>
 
-            <div className="flex items-center">
-              <Link href="/">
-                <Image
-                  src="/hom/logo.svg"
-                  width={1000}
-                  height={1000}
-                  className="w-48"
-                  alt="Brand Logo"
-                />
+            <div className="flex-1 items-center">
+              <Link
+                href="/"
+                className="text-2xl font-bold text-[var(--banner-btn)]"
+              >
+                SkelaEdu
               </Link>
             </div>
 
             {/* Desktop Menu */}
-            <div className="hidden lg:flex text-sm flex-1 ps-5 ms-5 border-l-2 space-x-6">
+            <div className="hidden lg:flex text-sm space-x-5 flex-grow justify-center Poppins text-[#333333] font-medium ">
               {navLink.map((navItem, index) => (
                 <div key={index} className="group relative h-full">
                   <Link
                     href={navItem.href}
-                    className={`navbar__link py-5 ${
-                      route === navItem.href ||
-                      (navItem.href === "#services" &&
-                        (route.includes("managed") || route.includes("av"))) ||
-                      (navItem.href === "#product" &&
-                        (route.includes("/printers") ||
-                          route.includes("toner") ||
-                          route.includes("accessories") ||
-                          route.includes("hardware")))
+                    className={`navbar__link py-5   
                         ? "active"
                         : ""
                     }`}
                   >
                     {navItem.label}
                   </Link>
-
                 </div>
               ))}
             </div>
 
             {/* Extra Links */}
-            <div className="hidden text-sm font-semibold flex-1 lg:flex space-x-5 justify-end">
-              <Link
-                href="/career"
-                className={`navbar__link py-5 ${
-                  route === "/career" ? "active" : ""
-                }`}
-              >
-                Career
-              </Link>
+            <div className="hidden text-sm font-bold flex-1 lg:flex justify-end">
               <Link
                 href="/contact"
-                className={`navbar__link py-5 ${
+                className={`navbar__link flex items-center rounded-lg text-white  justify-center text-center w-[87px] h-[42px] bg-[var(--banner-btn)] ${
                   route === "/contact" ? "active" : ""
                 }`}
               >
-                Contact Us
+                Sign In
               </Link>
             </div>
           </div>
         </div>
-
-        {/* <MobileMenu
-          navLink={navLink}
-          isMobileMenuOpen={isMobileMenuOpen}
-          setMobileMenuOpen={setMobileMenuOpen}
-          route={route}
-        /> */}
       </nav>
     </div>
   );

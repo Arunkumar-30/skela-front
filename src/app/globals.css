@@ -11,6 +11,7 @@
   --imagebackground:#FFEEEE;
   --loanvector:#254882;
   --bordvector:#CBD8EC;
+  --navfont:'Poppins';
 
   } 
 
@@ -96,11 +97,240 @@ z-index: -1;
   width: 1176px;
   height: 1176px;
 }
-.circle-img{
+.center-logo{
+  position: absolute;
+  bottom: -100PX;
+  right: 455px;
+}
+.circle-dot{
+  position: absolute;
+  bottom: 78px;
+  right: 320px;
+}
+
+.icon-block {
+  width: 150px;
+  height: 150px;
+  position: absolute;
+  border-radius: 50%;
+  display: flex;
+  display: -webkit-flex;
+  align-items: center;
+  -webkit-align-items: center;
+  justify-content: center;
+  -webkit-justify-content: center;
+
+}
+.icon-block .Image {
+  margin: 0px auto;
+
+  animation: Rotate-reverse 20s linear infinite;
+  -webkit-animation: Rotate-reverse 20s linear infinite;
+}
+.icon-block:first-child {
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+}
+.icon-block:nth-child(2) {
+  top: 50%;
+  right: 0;
+  transform: translate(50%, -50%);
+  -webkit-transform: translate(50%, -50%);
+}
+.icon-block:nth-child(3) {
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%, 50%);
+  -webkit-transform: translate(-50%, 50%);
+}
+.icon-block:nth-child(4) {
+  top: 50%;
+  left: 0;
+  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+}
+
+/* circle content */
+.circle-allImg {
+  animation: circle-rotate 20s linear infinite;
+  -webkit-animation: circle-rotate 20s linear infinite;
+  position: absolute;
+  right: 40px;
+bottom: -478px;
+ z-index: 1;
+  transform: translate(-50%, -50%) rotate(45deg);
+  -webkit-transform: translate(-50%, -50%) rotate(45deg);
+width: 560px;
+height: 560px;
+
+ 
+  border-radius: 50%;
+}
+.circle-allImg .icon-block .Image{
+  animation: img-rotate 20s linear infinite;
+  -webkit-animation: img-rotate 20s linear infinite;
+}
+
+
+/* keyframe animation */
+
+@keyframes Rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@-webkit-keyframes Rotate {
+  from {
+    -webkit-transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+  }
+}
+
+@keyframes Rotate-reverse {
+  from {
+    transform: rotate(360deg);
+  }
+  to {
+    transform: rotate(0deg);
+  }
+}
+
+@-webkit-keyframes Rotate-reverse {
+  from {
+    -webkit-transform: rotate(360deg);
+  }
+  to {
+    -webkit-transform: rotate(0deg);
+  }
+}
+
+@keyframes circle-rotate {
+  from {
+    transform: translate(-50%, -50%) rotate(45deg);
+  }
+  to {
+    transform: translate(-50%, -50%) rotate(405deg);
+  }
+}
+
+@-webkit-keyframes circle-rotate {
+  from {
+    -webkit-transform: translate(-50%, -50%) rotate(45deg);
+  }
+  to {
+    -webkit-transform: translate(-50%, -50%) rotate(405deg);
+  }
+}
+
+@keyframes img-rotate {
+  from {
+    transform: rotate(-45deg);
+  }
+  to {
+    transform: rotate(-405deg);
+  }
+}
+
+@-webkit-keyframes img-rotate {
+  from {
+    -webkit-transform: rotate(-45deg);
+  }
+  to {
+    -webkit-transform: rotate(-405deg);
+  }
+}
+
+/* Rotating Images */
+.icon-block {
+  position: absolute;
+  width: 150px;
+  height: 150px;
+
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform-origin: center;
+  transform: rotate(calc(var(--i) * 72deg)) translate(180px) rotate(calc(var(--i) * -72deg));
+}
+
+.icon-block .Image{
+  width: 80%;
+  animation: rotate-reverse 20s linear infinite;
+}
+
+/* Animations */
+@keyframes rotate-circle {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes rotate-reverse {
+  from {
+    transform: rotate(360deg);
+  }
+  to {
+    transform: rotate(0deg);
+  }
+}
+
+
+
+
+/* .circle-img{
   position: absolute;
   bottom: -100PX;
   right: 455px;
 } 
+.circle-dot{
+  position: absolute;
+  bottom: 78px;
+  right: 320px;
+}
+.circle-subImg{
+  position: absolute;
+  bottom: -10px;
+  right: -30px;
+
+}
+.circle-subImg1{
+  position: absolute;
+  bottom: 180px;
+  right: 60px;
+
+}
+.circle-subImg2{
+  position: absolute;
+  bottom: 250px;
+  right: 250px;
+
+}
+.circle-subImg3{
+  position: absolute;
+  bottom: 160px;
+  left: 40px;
+
+}
+.circle-subImg4{
+  position: absolute;
+  bottom: -10px;
+  left: -30px;
+
+} */
+
+
 
 
 .slider {
@@ -229,6 +459,29 @@ right: 60px;
   position: absolute;
   top: 50px;
   right: 90px;
+
+}
+.book-element-7{
+  position: absolute;
+  left: 130px;
+  bottom: 110px;
+}
+.book-element-8{
+  position: absolute;
+  left: 108px;
+  bottom: 110px;
+}
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
 }
 
 /* .contain{
@@ -263,7 +516,8 @@ backdrop-filter: blur(27.5px);
 }
 
 
-.icon-scroller{
+
+/* .icon-scroller{
   animation: verticalscroll 6s linear infinite;
 }
 @keyframes verticalscroll {
@@ -272,8 +526,19 @@ backdrop-filter: blur(27.5px);
    }100%{
     transform: translateY(0%);
    }
+} */
+@keyframes scroll {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-100%);
+  }
 }
 
+.animate-scroll {
+  animation: scroll 50s linear infinite;
+}
 
 
 

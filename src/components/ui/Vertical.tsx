@@ -122,114 +122,84 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { ScrollToPlugin } from "gsap/ScrollToPlugin";
 import Image from "next/image";
 import Link from "next/link";
+
 gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 
 const SliderNavigation = () => {
   const containerRef = useRef<HTMLDivElement>(null);
   const panelsRef = useRef<(HTMLDivElement | null)[]>([]);
-  const navRefs = useRef<(HTMLAnchorElement | null)[]>([]);
 
   useEffect(() => {
     const panels = panelsRef.current;
 
-    panels.forEach((panel, i) => {
+    panels.forEach((panel) => {
       if (!panel) return;
       ScrollTrigger.create({
         trigger: panel,
         start: "top top",
         pin: true,
-        pinSpacing: false,
-      });
-    });
-
-    navRefs.current.forEach((nav, i) => {
-      if (!nav) return;
-      nav.addEventListener("click", (e) => {
-        e.preventDefault();
-        gsap.to(window, {
-          duration: 1,
-          scrollTo: panels[i]?.offsetTop,
-        });
+        pinSpacing: true, // Ensure normal spacing
       });
     });
   }, []);
 
   return (
-    <div ref={containerRef} className="relative w-full h-auto ">
-      <nav className="fixed top-4 left-4 bg-white p-4 rounded-lg shadow-md hidden ">
-        <div className="">
-          <a ref={(el) => (navRefs.current[0] = el)} href="#one">
-            Section One
-          </a>
-        </div>
-        <div>
-          <a ref={(el) => (navRefs.current[1] = el)} href="#two">
-            Section Two
-          </a>
-        </div>
-        <div>
-          <a ref={(el) => (navRefs.current[2] = el)} href="#three">
-            Section Three
-          </a>
-        </div>
-        <div>
-          <a ref={(el) => (navRefs.current[3] = el)} href="#four">
-            Section Four
-          </a>
-        </div>
-      </nav>
-      <div className="w-full h-auto">
-        <div
-          ref={(el) => (panelsRef.current[0] = el)}
-          id="one"
-          className="bg-white"
-        >
+    <div className="relative w-full">
+      <div ref={containerRef} className="overflow-hidden ">
+        <div ref={(el) => (panelsRef.current[0] = el)} id="one">
           <div className="bg-[var(--cardbackground)]">
-            <div className="max-w-7xl py-20 mx-auto mt-10 relative">
-              <div className="flex flex-row lg:flex-row gap-10">
+            <div className="max-w-7xl py-20 mx-auto  relative px-5">
+              <div className="flex flex-col lg:flex-row gap-10">
                 <div className="flex-1 space-y-5">
                   <div className="relative">
+                    {/* Main Image */}
                     <Image
                       src="/whychoose/skela.png"
                       width={600}
                       height={600}
-                      className=""
+                      className="w-full sm:w-auto mx-auto"
                       alt="why"
                     />
-                    <div className="book-element-1">
+
+                    {/* Floating Elements - Adjusted for Mobile */}
+                    <div className="absolute top-[85%] right-[10%] sm:top-[390px] sm:right-[60px] w-[60px] sm:w-[87px] animate-float">
                       <Image
                         src="/whychoose/30.png"
                         width={87}
-                        height={79.06}
+                        height={79}
                         alt="element-1"
                       />
                     </div>
-                    <div className="book-element-2">
+
+                    <div className="absolute top-[5%] right-[10%] sm:top-[30px] sm:right-[60px] w-[60px] sm:w-[87px] animate-float">
                       <Image
                         src="/whychoose/31.png"
                         width={87}
-                        height={79.06}
-                        alt="element-1"
+                        height={79}
+                        alt="element-2"
                       />
                     </div>
-                    <div className="book-element-3">
+
+                    <div className="absolute left-[5%] bottom-[30%] sm:left-[20px] sm:bottom-[150px] w-[60px] sm:w-[87px] animate-float">
                       <Image
                         src="/whychoose/32.png"
                         width={87}
-                        height={79.06}
-                        alt="element-1"
+                        height={79}
+                        alt="element-3"
                       />
                     </div>
-                    <div className="book-element-4">
+
+                    <div className="absolute top-[3%] left-[5%] sm:top-[20px] sm:left-[30px] w-[60px] sm:w-[87px] animate-float">
                       <Image
                         src="/whychoose/33.png"
                         width={87}
-                        height={79.06}
-                        alt="element-1"
+                        height={79}
+                        alt="element-4"
                       />
                     </div>
                   </div>
                 </div>
+
                 <div className="flex-1 space-y-6 mt-20">
                   <h4 className="text-base font-medium text-[var(--subtitle)]">
                     Choose?
@@ -269,7 +239,7 @@ const SliderNavigation = () => {
                   </div>
                 </div>
               </div>
-              <div className="book-element-5">
+              <div className=" book-element-5">
                 <Image
                   src="/whychoose/why_ele-5.png"
                   width={100}
@@ -277,7 +247,7 @@ const SliderNavigation = () => {
                   alt="element-1"
                 />
               </div>
-              <div className="book-element-6">
+              <div className=" book-element-6">
                 <Image
                   src="/whychoose/why_ele-6.png"
                   width={32}
@@ -293,8 +263,8 @@ const SliderNavigation = () => {
           id="two"
           className="bg-white"
         >
-          <div className="max-w-7xl py-20 mx-auto mt-10">
-            <div className="flex flex-row lg:flex-row gap-10">
+          <div className="max-w-7xl py-20 mx-auto  px-5">
+            <div className="flex flex-col-reverse lg:flex-row gap-10">
               <div className="flex-1 space-y-6 mt-20">
                 <h4 className="text-base font-medium text-[var(--subtitle)]">
                   Choose?
@@ -336,13 +306,13 @@ const SliderNavigation = () => {
               <div className="flex-1 space-y-5">
                 <div className="relative">
                   <Image
-                    src="/whychoose/skela.png"
+                    src="/whychoose/why-2.png"
                     width={600}
                     height={600}
-                    className=""
+                    className="w-full sm:w-auto mx-auto"
                     alt="why"
                   />
-                  <div className="book-element-1">
+                  <div className="absolute top-[85%] right-[10%] sm:top-[390px] sm:right-[60px] w-[60px] sm:w-[87px] animate-float">
                     <Image
                       src="/whychoose/30.png"
                       width={87}
@@ -350,7 +320,7 @@ const SliderNavigation = () => {
                       alt="element-1"
                     />
                   </div>
-                  <div className="book-element-2">
+                  <div className="absolute top-[5%] right-[10%] sm:top-[30px] sm:right-[60px] w-[60px] sm:w-[87px] animate-float">
                     <Image
                       src="/whychoose/31.png"
                       width={87}
@@ -358,7 +328,7 @@ const SliderNavigation = () => {
                       alt="element-1"
                     />
                   </div>
-                  <div className="book-element-3">
+                  <div className="absolute left-[5%] bottom-[30%] sm:left-[20px] sm:bottom-[150px] w-[60px] sm:w-[87px] animate-float">
                     <Image
                       src="/whychoose/32.png"
                       width={87}
@@ -366,7 +336,7 @@ const SliderNavigation = () => {
                       alt="element-1"
                     />
                   </div>
-                  <div className="book-element-4">
+                  <div className="absolute top-[3%] left-[5%] sm:top-[20px] sm:left-[30px] w-[60px] sm:w-[87px] animate-float">
                     <Image
                       src="/whychoose/33.png"
                       width={87}
@@ -376,56 +346,72 @@ const SliderNavigation = () => {
                   </div>
                 </div>
               </div>
+              <div className="absolute -bottom-[0px] hidden lg:block">
+                <Image
+                  src="/whychoose/why_ele-5.png"
+                  width={100}
+                  height={100}
+                  alt="element-1"
+                />
+              </div>
+              <div className="absolute -bottom-3 hidden lg:block">
+                <Image
+                  src="/whychoose/why_ele-6.png"
+                  width={32}
+                  height={32}
+                  alt="element-1"
+                />
+              </div>
             </div>
           </div>
         </div>
-        <div
-          ref={(el) => (panelsRef.current[2] = el)}
-          id="three"
-          className="bg-white"
-        >
+        <div ref={(el) => (panelsRef.current[2] = el)} id="three">
           <div className="bg-[var(--cardbackground)]">
-            <div className="max-w-7xl py-20 mx-auto mt-10">
-              <div className="flex flex-row lg:flex-row gap-10">
+            <div className="max-w-7xl py-20 mx-auto  px-5">
+              <div className="flex flex-col lg:flex-row gap-10">
                 <div className="flex-1 space-y-5">
                   <div className="relative">
                     <Image
-                      src="/whychoose/skela.png"
+                      src="/whychoose/why-3.png"
                       width={600}
                       height={600}
-                      className=""
+                      className="w-full sm:w-auto mx-auto"
                       alt="why"
                     />
-                    <div className="book-element-1">
+                    {/* Floating Elements - Adjusted for Mobile */}
+                    <div className="absolute top-[85%] right-[10%] sm:top-[390px] sm:right-[60px] w-[60px] sm:w-[87px] animate-float">
                       <Image
                         src="/whychoose/30.png"
                         width={87}
-                        height={79.06}
+                        height={79}
                         alt="element-1"
                       />
                     </div>
-                    <div className="book-element-2">
+
+                    <div className="absolute top-[5%] right-[10%] sm:top-[30px] sm:right-[60px] w-[60px] sm:w-[87px] animate-float">
                       <Image
                         src="/whychoose/31.png"
                         width={87}
-                        height={79.06}
-                        alt="element-1"
+                        height={79}
+                        alt="element-2"
                       />
                     </div>
-                    <div className="book-element-3">
+
+                    <div className="absolute left-[5%] bottom-[30%] sm:left-[20px] sm:bottom-[150px] w-[60px] sm:w-[87px] animate-float">
                       <Image
                         src="/whychoose/32.png"
                         width={87}
-                        height={79.06}
-                        alt="element-1"
+                        height={79}
+                        alt="element-3"
                       />
                     </div>
-                    <div className="book-element-4">
+
+                    <div className="absolute top-[3%] left-[5%] sm:top-[20px] sm:left-[30px] w-[60px] sm:w-[87px] animate-float">
                       <Image
                         src="/whychoose/33.png"
                         width={87}
-                        height={79.06}
-                        alt="element-1"
+                        height={79}
+                        alt="element-4"
                       />
                     </div>
                   </div>
@@ -468,6 +454,22 @@ const SliderNavigation = () => {
                     </Link>
                   </div>
                 </div>
+                <div className="book-element-5">
+                  <Image
+                    src="/whychoose/why_ele-5.png"
+                    width={100}
+                    height={100}
+                    alt="element-1"
+                  />
+                </div>
+                <div className="book-element-6">
+                  <Image
+                    src="/whychoose/why_ele-6.png"
+                    width={32}
+                    height={32}
+                    alt="element-1"
+                  />
+                </div>
               </div>
             </div>
           </div>
@@ -477,8 +479,8 @@ const SliderNavigation = () => {
           id="four"
           className="bg-white"
         >
-          <div className="max-w-7xl py-20 mx-auto mt-10">
-            <div className="flex flex-row lg:flex-row gap-10">
+          <div className="max-w-7xl py-20 mx-auto  px-5">
+            <div className="flex flex-col-reverse lg:flex-row gap-10">
               <div className="flex-1 space-y-6 mt-20">
                 <h4 className="text-base font-medium text-[var(--subtitle)]">
                   Choose?
@@ -520,13 +522,13 @@ const SliderNavigation = () => {
               <div className="flex-1 space-y-5">
                 <div className="relative">
                   <Image
-                    src="/whychoose/skela.png"
+                    src="/whychoose/why-4.png"
                     width={600}
                     height={600}
-                    className=""
+                    className="w-full sm:w-auto mx-auto"
                     alt="why"
                   />
-                  <div className="book-element-1">
+                  <div className=" absolute top-[85%] right-[10%] sm:top-[390px] sm:right-[60px] w-[60px] sm:w-[87px] animate-float">
                     <Image
                       src="/whychoose/30.png"
                       width={87}
@@ -534,7 +536,7 @@ const SliderNavigation = () => {
                       alt="element-1"
                     />
                   </div>
-                  <div className="book-element-2">
+                  <div className="absolute top-[5%] right-[10%] sm:top-[30px] sm:right-[60px] w-[60px] sm:w-[87px] animate-float">
                     <Image
                       src="/whychoose/31.png"
                       width={87}
@@ -542,7 +544,7 @@ const SliderNavigation = () => {
                       alt="element-1"
                     />
                   </div>
-                  <div className="book-element-3">
+                  <div className="absolute left-[5%] bottom-[30%] sm:left-[20px] sm:bottom-[150px] w-[60px] sm:w-[87px] animate-float">
                     <Image
                       src="/whychoose/32.png"
                       width={87}
@@ -550,7 +552,7 @@ const SliderNavigation = () => {
                       alt="element-1"
                     />
                   </div>
-                  <div className="book-element-4">
+                  <div className="absolute top-[3%] left-[5%] sm:top-[20px] sm:left-[30px] w-[60px] sm:w-[87px] animate-float">
                     <Image
                       src="/whychoose/33.png"
                       width={87}
@@ -559,6 +561,22 @@ const SliderNavigation = () => {
                     />
                   </div>
                 </div>
+              </div>
+              <div className="hidden lg:block book-element-7">
+                <Image
+                  src="/whychoose/why_ele-5.png"
+                  width={100}
+                  height={100}
+                  alt="element-1"
+                />
+              </div>
+              <div className="hidden lg:block  book-element-8">
+                <Image
+                  src="/whychoose/why_ele-6.png"
+                  width={32}
+                  height={32}
+                  alt="element-1"
+                />
               </div>
             </div>
           </div>

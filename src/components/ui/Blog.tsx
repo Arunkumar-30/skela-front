@@ -57,18 +57,18 @@ const BlogComponent = () => {
   return (
     <>
       <div className="py-20">
-        <div className="max-w-7xl mx-auto">
+        <div className="max-w-7xl mx-auto px-5">
           <h4 className="text-[var(--subtitle)] text-2xl font-semibold">
             Choose Your Country
           </h4>
           <h1 className="text-5xl font-bold text-black mb-10">
             The World is your Campus!
           </h1>
-          <div className="flex flex-col lg:flex-row flex-wrap gap-3">
+          <div className="flex flex-wrap ;g:justify-center gap-4 sm:gap-6">
             <div>
               <Link
                 href="#"
-                className="bg-[var(--banner-btn)] p-2 rounded-lg text-white text-xl border border-[#D7F7D8]"
+                className="bg-[var(--banner-btn)] p-2 rounded-lg text-white text-xl border border-[#D7F7D8] w-full sm:w-auto text-center block"
               >
                 All Categories
               </Link>
@@ -76,7 +76,7 @@ const BlogComponent = () => {
             <div>
               <Link
                 href="#"
-                className=" p-2 rounded-lg  text-xl border border-[#D7F7D8]"
+                className="p-2 rounded-lg text-xl border border-[#D7F7D8] w-full sm:w-auto text-center block"
               >
                 Trending
               </Link>
@@ -84,7 +84,7 @@ const BlogComponent = () => {
             <div>
               <Link
                 href="#"
-                className=" p-2 rounded-lg text-xl border border-[#D7F7D8]"
+                className="p-2 rounded-lg text-xl border border-[#D7F7D8] w-full sm:w-auto text-center block"
               >
                 Announcement
               </Link>
@@ -92,12 +92,13 @@ const BlogComponent = () => {
             <div>
               <Link
                 href="#"
-                className=" p-2 rounded-lg text-xl border border-[#D7F7D8]"
+                className="p-2 rounded-lg text-xl border border-[#D7F7D8] w-full sm:w-auto text-center block"
               >
                 Exams
               </Link>
             </div>
           </div>
+
           <div className="max-w-7xl mx-auto px-4 py-10">
             {/* Responsive Grid */}
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
