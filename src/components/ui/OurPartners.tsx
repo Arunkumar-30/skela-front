@@ -335,9 +335,13 @@ const OurPartnersComponent = () => {
 
         <div className="relative h-[400px] overflow-hidden bg-white py-4">
           {/* Scrolling Container */}
-          <div className="absolute w-full flex flex-col flex-wrap items-center animate-scroll">
-            <FlagColumn />
-            <FlagColumn /> {/* Duplicate for seamless vertical scrolling */}
+          <div className="absolute w-full flex flex-col flex-wrap gap-3 items-center animate-scroll">
+            <FlagRow />
+            <FlagRow /> {/* Duplicate for seamless vertical scrolling */}
+            <FlagRow /> {/* Duplicate for seamless vertical scrolling */}
+            <FlagRow /> {/* Duplicate for seamless vertical scrolling */}
+            <FlagRow /> {/* Duplicate for seamless vertical scrolling */}
+            <FlagRow /> {/* Duplicate for seamless vertical scrolling */}
           </div>
         </div>
       </div>
@@ -345,284 +349,41 @@ const OurPartnersComponent = () => {
   );
 };
 
-const FlagColumn = () => {
-  const flags = Array(20).fill("/countrys/flag-1.png"); // Adjust the number of flags
+const FlagRow = () => {
+  const flags = [
+    "/countrys/flag-1.png",
+    "/countrys/flag-1.png",
+    "/countrys/flag-1.png",
+    "/countrys/flag-1.png",
+    "/countrys/flag-1.png",
+    "/countrys/flag-1.png",
+    "/countrys/flag-1.png",
+    "/countrys/flag-1.png",
+    "/countrys/flag-1.png",
+    "/countrys/flag-1.png",
+    "/countrys/flag-1.png",
+    "/countrys/flag-1.png",
+    "/countrys/flag-1.png",
+    "/countrys/flag-1.png",
+    "/countrys/flag-1.png",
+    "/countrys/flag-1.png",
+    "/countrys/flag-1.png",
+    "/countrys/flag-1.png",
+    "/countrys/flag-1.png",
+    "/countrys/flag-1.png",
+  ];
 
   return (
-    <>
-      <div className="flex flex-row gap-3 px-5">
-        <ul className="flex flex-col gap-3 justify-center items-center list-none w-full">
-          {flags.map((flag, index) => (
-            <li
-              key={index}
-              className="w-[72px] h-[72px] rounded-lg border border-[#70EB7380] flex justify-center items-center"
-            >
-              <Image
-                src={flag}
-                width={36}
-                height={36}
-                alt={`flag-${index + 1}`}
-              />
-            </li>
-          ))}
-        </ul>
-        <ul className="flex flex-col gap-3 justify-center items-center list-none w-full">
-          {flags.map((flag, index) => (
-            <li
-              key={index}
-              className="w-[72px] h-[72px] rounded-lg border border-[#70EB7380] flex justify-center items-center"
-            >
-              <Image
-                src={flag}
-                width={36}
-                height={36}
-                alt={`flag-${index + 1}`}
-              />
-            </li>
-          ))}
-        </ul>{" "}
-        <ul className="flex flex-col gap-3 justify-center items-center list-none w-full">
-          {flags.map((flag, index) => (
-            <li
-              key={index}
-              className="w-[72px] h-[72px] rounded-lg border border-[#70EB7380] flex justify-center items-center"
-            >
-              <Image
-                src={flag}
-                width={36}
-                height={36}
-                alt={`flag-${index + 1}`}
-              />
-            </li>
-          ))}
-        </ul>
-        <ul className="flex flex-col gap-3 justify-center items-center list-none w-full">
-          {flags.map((flag, index) => (
-            <li
-              key={index}
-              className="w-[72px] h-[72px] rounded-lg border border-[#70EB7380] flex justify-center items-center"
-            >
-              <Image
-                src={flag}
-                width={36}
-                height={36}
-                alt={`flag-${index + 1}`}
-              />
-            </li>
-          ))}
-        </ul>{" "}
-        <ul className="flex flex-col gap-3 justify-center items-center list-none w-full">
-          {flags.map((flag, index) => (
-            <li
-              key={index}
-              className="w-[72px] h-[72px] rounded-lg border border-[#70EB7380] flex justify-center items-center"
-            >
-              <Image
-                src={flag}
-                width={36}
-                height={36}
-                alt={`flag-${index + 1}`}
-              />
-            </li>
-          ))}
-        </ul>
-        <ul className="flex flex-col gap-3 justify-center items-center list-none w-full">
-          {flags.map((flag, index) => (
-            <li
-              key={index}
-              className="w-[72px] h-[72px] rounded-lg border border-[#70EB7380] flex justify-center items-center"
-            >
-              <Image
-                src={flag}
-                width={36}
-                height={36}
-                alt={`flag-${index + 1}`}
-              />
-            </li>
-          ))}
-        </ul>{" "}
-        <ul className="flex flex-col gap-3 justify-center items-center list-none w-full">
-          {flags.map((flag, index) => (
-            <li
-              key={index}
-              className="w-[72px] h-[72px] rounded-lg border border-[#70EB7380] flex justify-center items-center"
-            >
-              <Image
-                src={flag}
-                width={36}
-                height={36}
-                alt={`flag-${index + 1}`}
-              />
-            </li>
-          ))}
-        </ul>
-        <ul className="flex flex-col gap-3 justify-center items-center list-none w-full">
-          {flags.map((flag, index) => (
-            <li
-              key={index}
-              className="w-[72px] h-[72px] rounded-lg border border-[#70EB7380] flex justify-center items-center"
-            >
-              <Image
-                src={flag}
-                width={36}
-                height={36}
-                alt={`flag-${index + 1}`}
-              />
-            </li>
-          ))}
-        </ul>{" "}
-        <ul className="flex flex-col gap-3 justify-center items-center list-none w-full">
-          {flags.map((flag, index) => (
-            <li
-              key={index}
-              className="w-[72px] h-[72px] rounded-lg border border-[#70EB7380] flex justify-center items-center"
-            >
-              <Image
-                src={flag}
-                width={36}
-                height={36}
-                alt={`flag-${index + 1}`}
-              />
-            </li>
-          ))}
-        </ul>
-        <ul className="flex flex-col gap-3 justify-center items-center list-none w-full">
-          {flags.map((flag, index) => (
-            <li
-              key={index}
-              className="w-[72px] h-[72px] rounded-lg border border-[#70EB7380] flex justify-center items-center"
-            >
-              <Image
-                src={flag}
-                width={36}
-                height={36}
-                alt={`flag-${index + 1}`}
-              />
-            </li>
-          ))}
-        </ul>{" "}
-        <ul className="flex flex-col gap-3 justify-center items-center list-none w-full">
-          {flags.map((flag, index) => (
-            <li
-              key={index}
-              className="w-[72px] h-[72px] rounded-lg border border-[#70EB7380] flex justify-center items-center"
-            >
-              <Image
-                src={flag}
-                width={36}
-                height={36}
-                alt={`flag-${index + 1}`}
-              />
-            </li>
-          ))}
-        </ul>
-        <ul className="flex flex-col gap-3 justify-center items-center list-none w-full">
-          {flags.map((flag, index) => (
-            <li
-              key={index}
-              className="w-[72px] h-[72px] rounded-lg border border-[#70EB7380] flex justify-center items-center"
-            >
-              <Image
-                src={flag}
-                width={36}
-                height={36}
-                alt={`flag-${index + 1}`}
-              />
-            </li>
-          ))}
-        </ul>{" "}
-        <ul className="flex flex-col gap-3 justify-center items-center list-none w-full">
-          {flags.map((flag, index) => (
-            <li
-              key={index}
-              className="w-[72px] h-[72px] rounded-lg border border-[#70EB7380] flex justify-center items-center"
-            >
-              <Image
-                src={flag}
-                width={36}
-                height={36}
-                alt={`flag-${index + 1}`}
-              />
-            </li>
-          ))}
-        </ul>
-        <ul className="flex flex-col gap-3 justify-center items-center list-none w-full">
-          {flags.map((flag, index) => (
-            <li
-              key={index}
-              className="w-[72px] h-[72px] rounded-lg border border-[#70EB7380] flex justify-center items-center"
-            >
-              <Image
-                src={flag}
-                width={36}
-                height={36}
-                alt={`flag-${index + 1}`}
-              />
-            </li>
-          ))}
-        </ul>{" "}
-        <ul className="flex flex-col gap-3 justify-center items-center list-none w-full">
-          {flags.map((flag, index) => (
-            <li
-              key={index}
-              className="w-[72px] h-[72px] rounded-lg border border-[#70EB7380] flex justify-center items-center"
-            >
-              <Image
-                src={flag}
-                width={36}
-                height={36}
-                alt={`flag-${index + 1}`}
-              />
-            </li>
-          ))}
-        </ul>
-        <ul className="flex flex-col gap-3 justify-center items-center list-none w-full">
-          {flags.map((flag, index) => (
-            <li
-              key={index}
-              className="w-[72px] h-[72px] rounded-lg border border-[#70EB7380] flex justify-center items-center"
-            >
-              <Image
-                src={flag}
-                width={36}
-                height={36}
-                alt={`flag-${index + 1}`}
-              />
-            </li>
-          ))}
-        </ul>{" "}
-        <ul className="flex flex-col gap-3 justify-center items-center list-none w-full">
-          {flags.map((flag, index) => (
-            <li
-              key={index}
-              className="w-[72px] h-[72px] rounded-lg border border-[#70EB7380] flex justify-center items-center"
-            >
-              <Image
-                src={flag}
-                width={36}
-                height={36}
-                alt={`flag-${index + 1}`}
-              />
-            </li>
-          ))}
-        </ul>
-        <ul className="flex flex-col gap-3 justify-center items-center list-none w-full">
-          {flags.map((flag, index) => (
-            <li
-              key={index}
-              className="w-[72px] h-[72px] rounded-lg border border-[#70EB7380] flex justify-center items-center"
-            >
-              <Image
-                src={flag}
-                width={36}
-                height={36}
-                alt={`flag-${index + 1}`}
-              />
-            </li>
-          ))}
-        </ul>
-      </div>
-    </>
+    <ul className="grid lg:grid-cols-10 grid-cols-4  gap-3 w-full">
+      {flags.map((flag, index) => (
+        <li
+          key={index}
+          className="w-[102px] h-[102px] rounded-lg border border-[#70EB7380] flex justify-center items-center"
+        >
+          <Image src={flag} width={36} height={36} alt={`flag-${index + 1}`} />
+        </li>
+      ))}
+    </ul>
   );
 };
 

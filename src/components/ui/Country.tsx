@@ -127,7 +127,7 @@ const CountryComponent = () => {
               <Image
                 src="/country/flag-7.jpg"
                 width={40}
-                height={42}
+                height={82}
                 alt="flag-1"
               />
             </div>
@@ -137,6 +137,30 @@ const CountryComponent = () => {
                 width={40}
                 height={42}
                 alt="flag-1"
+              />
+            </div>
+            <div className="absolute bottom-68 right-93">
+              <Image
+                src="/country/india.png"
+                width={40}
+                height={42}
+                alt="flag-1"
+              />
+            </div>
+            <div className="absolute bottom-70 right-90">
+              <Image
+                src="/country/line.svg"
+                width={300}
+                height={200}
+                alt="line"
+              />
+            </div>
+            <div className="absolute bottom-107 right-100 rotate-12">
+              <Image
+                src="/country/flight.svg"
+                width={30}
+                height={20}
+                alt="line"
               />
             </div>
           </div>

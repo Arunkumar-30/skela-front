@@ -346,7 +346,7 @@ const SliderNavigation = () => {
                   </div>
                 </div>
               </div>
-              <div className="absolute -bottom-[0px] hidden lg:block">
+              <div className="hidden lg:block  book-element-7">
                 <Image
                   src="/whychoose/why_ele-5.png"
                   width={100}
@@ -354,7 +354,7 @@ const SliderNavigation = () => {
                   alt="element-1"
                 />
               </div>
-              <div className="absolute -bottom-3 hidden lg:block">
+              <div className="hidden lg:block  book-element-8">
                 <Image
                   src="/whychoose/why_ele-6.png"
                   width={32}

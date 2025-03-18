@@ -253,9 +253,7 @@ height: 560px;
   position: absolute;
   width: 150px;
   height: 150px;
-
-
-  display: flex;
+   display: flex;
   align-items: center;
   justify-content: center;
   transform-origin: center;
@@ -532,12 +530,12 @@ backdrop-filter: blur(27.5px);
     transform: translateY(0);
   }
   to {
-    transform: translateY(-100%);
+    transform: translateY(-50%);
   }
 }
 
 .animate-scroll {
-  animation: scroll 50s linear infinite;
+  animation: scroll 10s linear infinite;
 }
 
 
