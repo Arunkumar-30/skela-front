@@ -269,6 +269,7 @@ height: 560px;
 @keyframes rotate-circle {
   from {
     transform: rotate(0deg);
+    z-index: -5;
   }
   to {
     transform: rotate(360deg);

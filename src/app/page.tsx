@@ -2,6 +2,8 @@ import NavbarComponent from "@/components/navbar/navbar";
 import BannerComponent from "@/components/ui/Banner";
 import BlogComponent from "@/components/ui/Blog";
 import CircularSlider from "@/components/ui/circle";
+import MapComponent from "@/components/ui/Country";
+import MapFlightAnimation from "@/components/ui/Country";
 import CountryComponent from "@/components/ui/Country";
 import LoanComponent from "@/components/ui/Loan";
 import NetworkComponent from "@/components/ui/Network";
@@ -85,7 +87,8 @@ export default function Home() {
       {/* <WhyChooseUsComponent /> */}
       <section>
         {" "}
-        <CountryComponent />
+        {/* <CountryComponent /> */}
+        <MapComponent />
         <PortalComponent />
         <LoanComponent />
         <NetworkComponent />
