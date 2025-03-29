@@ -462,13 +462,13 @@ right: 60px;
 }
 .book-element-7{
   position: absolute;
-  left: 130px;
+  left: 13px;
   bottom: 110px;
 }
 .book-element-8{
   position: absolute;
-  left: 108px;
-  bottom: 110px;
+  left: -9px;
+  bottom: 107px;
 }
 @keyframes float {
   0%, 100% {

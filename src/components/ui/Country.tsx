@@ -171,122 +171,318 @@
 // };
 
 // export default CountryComponent;
-"use client"; // Ensures this runs only on the client side
-import { useEffect, useState } from "react";
-import { MapContainer, TileLayer, Marker, Popup, useMap } from "react-leaflet";
-import { Icon, LatLng, divIcon } from "leaflet";
-import "leaflet/dist/leaflet.css";
+// "use client";
+// import { useEffect, useState } from "react";
+// import { MapContainer, TileLayer, Marker, Popup, useMap } from "react-leaflet";
+// import { Icon, LatLng, divIcon } from "leaflet";
+// import "leaflet/dist/leaflet.css";
 
-const MapComponent = () => {
-  const [destination, setDestination] = useState<{
-    name: string;
-    lat: number;
-    lon: number;
-  }>({
-    name: "India",
-    lat: 20.5937,
-    lon: 78.9629,
-  });
+// const MapComponent = () => {
+//   const [destination, setDestination] = useState<{
+//     name: string;
+//     lat: number;
+//     lon: number;
+//   }>({
+//     name: "India",
+//     lat: 20.5937,
+//     lon: 78.9629,
+//   });
 
-  const countryData: Record<
-    string,
-    { name: string; lat: number; lon: number }
-  > = {
-    India: { name: "India", lat: 20.5937, lon: 78.9629 },
-    Canada: { name: "Canada", lat: 56.1304, lon: -106.3468 },
-    France: { name: "France", lat: 46.6034, lon: 1.8883 },
-    Germany: { name: "Germany", lat: 51.1657, lon: 10.4515 },
-  };
+//   const countryData: Record<
+//     string,
+//     { name: string; lat: number; lon: number }
+//   > = {
+//     India: { name: "India", lat: 20.5937, lon: 78.9629 },
+//     Canada: { name: "Canada", lat: 56.1304, lon: -106.3468 },
+//     France: { name: "France", lat: 46.6034, lon: 1.8883 },
+//     Germany: { name: "Germany", lat: 51.1657, lon: 10.4515 },
+//   };
 
-  const planeIcon = divIcon({
-    html: "✈️",
-    className: "text-lg",
-    iconSize: [30, 30],
-  });
+//   const planeIcon = divIcon({
+//     html: "✈️",
+//     className: "text-lg",
+//     iconSize: [30, 30],
+//   });
 
-  const customIcon = new Icon({
-    iconUrl: "https://cdn-icons-png.flaticon.com/512/684/684908.png",
-    iconSize: [30, 30],
-  });
+//   const customIcon = new Icon({
+//     iconUrl: "https://cdn-icons-png.flaticon.com/512/684/684908.png",
+//     iconSize: [30, 30],
+//   });
 
-  return (
-    <div className="max-w-7xl mx-auto text-center mt-10">
-      <h2 className="text-2xl font-bold mb-4">Select Your Destination</h2>
+//   return (
+//     <div className="max-w-7xl mx-auto text-center mt-10">
+//       <h2 className="text-2xl font-bold mb-4">Select Your Destination</h2>
 
-      {/* Country Dropdown */}
-      <select
-        className="border p-2 rounded-lg mb-4"
-        onChange={(e) => {
-          const selected = e.target.value as keyof typeof countryData;
-          setDestination(countryData[selected]);
-        }}
-      >
-        {Object.keys(countryData).map((country) => (
-          <option key={country} value={country}>
-            {country}
-          </option>
-        ))}
-      </select>
+//       <select
+//         className="border p-2 rounded-lg mb-4"
+//         onChange={(e) => {
+//           const selected = e.target.value as keyof typeof countryData;
+//           setDestination(countryData[selected]);
+//         }}
+//       >
+//         {Object.keys(countryData).map((country) => (
+//           <option key={country} value={country}>
+//             {country}
+//           </option>
+//         ))}
+//       </select>
 
-      {/* Map Display */}
-      <MapContainer
-        center={[20.5937, 78.9629]}
-        zoom={4}
-        style={{ width: "100%", height: "500px" }}
-      >
-        <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
-        <Marker position={[20.5937, 78.9629]} icon={customIcon}>
-          <Popup>India</Popup>
-        </Marker>
-        <Marker position={[destination.lat, destination.lon]} icon={customIcon}>
-          <Popup>{destination.name}</Popup>
-        </Marker>
-        <AnimatedFlight
-          from={[20.5937, 78.9629]}
-          to={[destination.lat, destination.lon]}
-        />
-      </MapContainer>
-    </div>
-  );
-};
+//       <MapContainer
+//         center={[20.5937, 78.9629]}
+//         zoom={4}
+//         style={{ width: "100%", height: "500px" }}
+//       >
+//         <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
+//         <Marker position={[20.5937, 78.9629]} icon={customIcon}>
+//           <Popup>India</Popup>
+//         </Marker>
+//         <Marker position={[destination.lat, destination.lon]} icon={customIcon}>
+//           <Popup>{destination.name}</Popup>
+//         </Marker>
+//         <AnimatedFlight
+//           from={[20.5937, 78.9629]}
+//           to={[destination.lat, destination.lon]}
+//         />
+//       </MapContainer>
+//     </div>
+//   );
+// };
 
-const AnimatedFlight = ({
-  from,
-  to,
-}: {
-  from: [number, number];
-  to: [number, number];
-}) => {
-  const [planePosition, setPlanePosition] = useState<LatLng | null>(null);
-  const map = useMap();
+// const AnimatedFlight = ({
+//   from,
+//   to,
+// }: {
+//   from: [number, number];
+//   to: [number, number];
+// }) => {
+//   const [planePosition, setPlanePosition] = useState<LatLng | null>(null);
+//   const map = useMap();
 
-  useEffect(() => {
-    let animationFrame: number;
-    const steps = 100;
-    let step = 0;
+//   useEffect(() => {
+//     let animationFrame: number;
+//     const steps = 100;
+//     let step = 0;
 
-    const animate = () => {
-      if (step <= steps) {
-        const lat = from[0] + ((to[0] - from[0]) * step) / steps;
-        const lon = from[1] + ((to[1] - from[1]) * step) / steps;
-        setPlanePosition(new LatLng(lat, lon));
-        step++;
-        animationFrame = requestAnimationFrame(animate);
-      }
-    };
+//     const animate = () => {
+//       if (step <= steps) {
+//         const lat = from[0] + ((to[0] - from[0]) * step) / steps;
+//         const lon = from[1] + ((to[1] - from[1]) * step) / steps;
+//         setPlanePosition(new LatLng(lat, lon));
+//         step++;
+//         animationFrame = requestAnimationFrame(animate);
+//       }
+//     };
 
-    animate();
-    map.flyTo(to, 5, { duration: 3 });
+//     animate();
+//     map.flyTo(to, 5, { duration: 3 });
 
-    return () => cancelAnimationFrame(animationFrame);
-  }, [from, to, map]);
+//     return () => cancelAnimationFrame(animationFrame);
+//   }, [from, to, map]);
 
-  return planePosition ? (
-    <Marker
-      position={planePosition}
-      icon={divIcon({ html: "✈️", className: "text-lg" })}
-    />
-  ) : null;
-};
+//   return planePosition ? (
+//     <Marker
+//       position={planePosition}
+//       icon={divIcon({ html: "✈️", className: "text-lg" })}
+//     />
+//   ) : null;
+// };
 
-export default MapComponent;
+// export default MapComponent;
+
+// "use client";
+// import { useState } from "react";
+// import Image from "next/image";
+// import { motion } from "framer-motion";
+
+// const countryData = {
+//   India: { name: "India", x: 400, y: 500 },
+//   Canada: { name: "Canada", x: 150, y: 200 },
+//   France: { name: "France", x: 600, y: 250 },
+//   Germany: { name: "Germany", x: 620, y: 230 },
+// };
+
+// const MapComponent = () => {
+//   const [destination, setDestination] = useState(countryData.India);
+//   const [planePosition, setPlanePosition] = useState(countryData.India);
+
+//   const handleDestinationChange = (
+//     event: React.ChangeEvent<HTMLSelectElement>
+//   ) => {
+//     const selectedCountry = event.target.value;
+//     setDestination(countryData[selectedCountry]);
+
+//     setTimeout(() => {
+//       setPlanePosition(countryData[selectedCountry]);
+//     }, 500);
+//   };
+
+//   return (
+//     <div className="relative w-full h-[900px] flex flex-col items-center">
+//       <h2 className="text-2xl font-bold mb-4">Select Your Destination</h2>
+
+//       <select
+//         className="border p-2 rounded-lg mb-4"
+//         onChange={handleDestinationChange}
+//       >
+//         {Object.keys(countryData).map((country) => (
+//           <option key={country} value={country}>
+//             {country}
+//           </option>
+//         ))}
+//       </select>
+
+//       <div className="relative w-full h-full flex justify-center items-center">
+//         <Image
+//           src="/country/country-map.png"
+//           width={800}
+//           height={600}
+//           className="w-full h-[700px]"
+//           alt="World Map"
+//           unoptimized
+//         />
+
+//         <svg className="absolute w-full h-full" viewBox="0 0 800 600">
+//           <path
+//             d={`M${countryData.India.x},${countryData.India.y} Q500,100 ${planePosition.x},${planePosition.y}`}
+//             stroke="red"
+//             strokeWidth="2"
+//             fill="transparent"
+//             strokeDasharray="5,5"
+//           />
+//         </svg>
+
+//         <motion.img
+//           src="/country/flight.svg"
+//           alt="Airplane"
+//           className="absolute w-10 h-10"
+//           initial={{ x: countryData.India.x, y: countryData.India.y }}
+//           animate={{ x: planePosition.x, y: planePosition.y }}
+//           transition={{ duration: 3, ease: "easeInOut" }}
+//         />
+//       </div>
+//     </div>
+//   );
+// };
+
+// export default MapComponent;
+// "use client";
+// import { useEffect, useState } from "react";
+// import { MapContainer, TileLayer, Marker, Popup, useMap } from "react-leaflet";
+// import { Icon, divIcon } from "leaflet";
+// import "leaflet/dist/leaflet.css";
+
+// const countryData: Record<string, { name: string; lat: number; lon: number }> =
+//   {
+//     India: { name: "India", lat: 20.5937, lon: 78.9629 },
+//     Canada: { name: "Canada", lat: 56.1304, lon: -106.3468 },
+//     France: { name: "France", lat: 46.6034, lon: 1.8883 },
+//     Germany: { name: "Germany", lat: 51.1657, lon: 10.4515 },
+//   };
+
+// const customIcon = new Icon({
+//   iconUrl: "https://cdn-icons-png.flaticon.com/512/684/684908.png",
+//   iconSize: [30, 30],
+// });
+
+// const MapComponent = () => {
+//   const [destination, setDestination] = useState(countryData.Canada);
+//   const mapCenter: [number, number] = [20.5937, 78.9629];
+
+//   const handleDestinationChange = (
+//     event: React.ChangeEvent<HTMLSelectElement>
+//   ) => {
+//     const selectedCountry = event.target.value as keyof typeof countryData;
+//     setDestination(countryData[selectedCountry]);
+//   };
+
+//   return (
+//     <div className="max-w-7xl mx-auto text-center mt-10">
+//       <h2 className="text-2xl font-bold mb-4">Select Your Destination</h2>
+//       <select
+//         className="border p-2 rounded-lg mb-4"
+//         onChange={handleDestinationChange}
+//       >
+//         {Object.keys(countryData)
+//           .filter((country) => country !== "India")
+//           .map((country) => (
+//             <option key={country} value={country}>
+//               {country}
+//             </option>
+//           ))}
+//       </select>
+//       <MapContainer
+//         center={mapCenter}
+//         zoom={3}
+//         style={{ width: "100%", height: "500px" }}
+//       >
+//         <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
+//         <Marker
+//           position={[countryData.India.lat, countryData.India.lon]}
+//           icon={customIcon}
+//         >
+//           <Popup>India</Popup>
+//         </Marker>
+//         <Marker position={[destination.lat, destination.lon]} icon={customIcon}>
+//           <Popup>{destination.name}</Popup>
+//         </Marker>
+//         <AnimatedFlight
+//           from={[countryData.India.lat, countryData.India.lon]}
+//           to={[destination.lat, destination.lon]}
+//         />
+//       </MapContainer>
+//     </div>
+//   );
+// };
+
+// const AnimatedFlight = ({
+//   from,
+//   to,
+// }: {
+//   from: [number, number];
+//   to: [number, number];
+// }) => {
+//   const [planePosition, setPlanePosition] = useState<[number, number]>(from);
+//   const [rotation, setRotation] = useState(0);
+//   const map = useMap();
+
+//   useEffect(() => {
+//     let step = 0;
+//     const steps = 100;
+//     const intervalTime = 50;
+//     setPlanePosition(from);
+
+//     const latStep = (to[0] - from[0]) / steps;
+//     const lonStep = (to[1] - from[1]) / steps;
+
+//     const interval = setInterval(() => {
+//       step++;
+//       if (step >= steps) {
+//         clearInterval(interval);
+//         setPlanePosition(to);
+//       } else {
+//         const newPos: [number, number] = [
+//           from[0] + latStep * step,
+//           from[1] + lonStep * step,
+//         ];
+//         setPlanePosition(newPos);
+//       }
+//     }, intervalTime);
+
+//     map.flyTo(to, 4, { duration: 3 });
+
+//     return () => clearInterval(interval);
+//   }, [to, map, from]);
+
+//   return (
+//     <Marker
+//       position={planePosition}
+//       icon={divIcon({
+//         html: `<div style="transform: rotate(${rotation}deg); font-size: 20px;">✈️</div>`,
+//         className: "text-lg",
+//         iconSize: [30, 30],
+//       })}
+//     />
+//   );
+// };
+
+// export default MapComponent;

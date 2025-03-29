@@ -82,35 +82,37 @@ const RotatingIcons = () => {
   }, [currentIndex]);
 
   return (
-    <div className="circle">
-      <div className="circle-allImg">
-        {/* Rotating Icons */}
-        {["image-1", "image-2", "image-3", "image-4"].map((img, index) => (
-          <div
-            className="icon-block"
-            key={index}
-            style={{ "--i": index } as React.CSSProperties}
-          >
-            <Image
-              src={`/banner/${img}.png`}
-              width={100}
-              height={100}
-              alt={img}
-              className="Image"
-            />
-          </div>
-        ))}
-      </div>
+    <div className="circle hidden lg:block">
+      <div className="">
+        <div className="circle-allImg">
+          {/* Rotating Icons */}
+          {["image-1", "image-2", "image-3", "image-4"].map((img, index) => (
+            <div
+              className="icon-block"
+              key={index}
+              style={{ "--i": index } as React.CSSProperties}
+            >
+              <Image
+                src={`/banner/${img}.png`}
+                width={100}
+                height={100}
+                alt={img}
+                className="Image"
+              />
+            </div>
+          ))}
+        </div>
 
-      {/* Center Changing Image */}
-      <div className="center-logo">
-        <Image
-          src={centerImages[currentIndex]}
-          width={273}
-          height={358}
-          className="object-fit"
-          alt={`group-${currentIndex + 1}`}
-        />
+        {/* Center Changing Image */}
+        <div className="center-logo">
+          <Image
+            src={centerImages[currentIndex]}
+            width={273}
+            height={358}
+            className="object-fit"
+            alt={`group-${currentIndex + 1}`}
+          />
+        </div>
       </div>
 
       <div className="circle-dot">

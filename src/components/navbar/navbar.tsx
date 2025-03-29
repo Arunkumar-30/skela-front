@@ -10,7 +10,17 @@ const NavbarComponent = () => {
   const route = usePathname();
 
   const navLink = [
-    { href: "/", label: "Study Abrod" },
+    {
+      href: "#studyabroad",
+      label: "Study Abroad",
+      dropdown: [
+        { label: "Uk", href: "/uk", img: "/country/" },
+        { label: "Toners", href: "/toner" },
+        { label: "Poly-Accessories", href: "/poly-accessories" },
+        { label: "HP-Peripherals", href: "/hp-peripherals" },
+        { label: "Hardware", href: "/hardware" },
+      ],
+    },
     { href: "/study-bg", label: "Study Bg" },
 
     { href: "/course-search", label: "Course Search" },
@@ -84,6 +94,22 @@ const NavbarComponent = () => {
                   >
                     {navItem.label}
                   </Link>
+                  {navItem.dropdown && (
+                    <div className="absolute z-50 left-1/2 transform p-3 -translate-x-1/2 mt-5 border shadow-2xl bg-white scale-y-0 origin-top group-hover:scale-y-100 transition-transform flex border-none">
+                      <ul className="space-y-1 px-5">
+                        {navItem.dropdown.map((dropdownItem, idx) => (
+                          <li key={idx}>
+                            <Link
+                              href={dropdownItem.href}
+                              className="block text-gray-600 hover:text-[#00008f] py-1 rounded-md"
+                            >
+                              {dropdownItem.label}
+                            </Link>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  )}
                 </div>
               ))}
             </div>

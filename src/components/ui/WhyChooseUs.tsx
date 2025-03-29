@@ -7,51 +7,58 @@ const WhyChooseUsComponent = () => {
   return (
     <>
       <div className="bg-[var(--cardbackground)]">
-        <div className="max-w-7xl py-20 mx-auto mt-10 relative">
-          <div className="flex flex-row lg:flex-row gap-10">
+        <div className="max-w-7xl py-20 mx-auto  relative px-5">
+          <div className="flex flex-col lg:flex-row gap-10">
             <div className="flex-1 space-y-5">
               <div className="relative">
+                {/* Main Image */}
                 <Image
                   src="/whychoose/skela.png"
                   width={600}
                   height={600}
-                  className=""
+                  className="w-full sm:w-auto mx-auto"
                   alt="why"
                 />
-                <div className="book-element-1">
+
+                {/* Floating Elements - Adjusted for Mobile */}
+                <div className="absolute top-[85%] right-[10%] sm:top-[390px] sm:right-[60px] w-[60px] sm:w-[87px] animate-float">
                   <Image
                     src="/whychoose/30.png"
                     width={87}
-                    height={79.06}
+                    height={79}
                     alt="element-1"
                   />
                 </div>
-                <div className="book-element-2">
+
+                <div className="absolute top-[5%] right-[10%] sm:top-[30px] sm:right-[60px] w-[60px] sm:w-[87px] animate-float">
                   <Image
                     src="/whychoose/31.png"
                     width={87}
-                    height={79.06}
-                    alt="element-1"
+                    height={79}
+                    alt="element-2"
                   />
                 </div>
-                <div className="book-element-3">
+
+                <div className="absolute left-[5%] bottom-[30%] sm:left-[20px] sm:bottom-[150px] w-[60px] sm:w-[87px] animate-float">
                   <Image
                     src="/whychoose/32.png"
                     width={87}
-                    height={79.06}
-                    alt="element-1"
+                    height={79}
+                    alt="element-3"
                   />
                 </div>
-                <div className="book-element-4">
+
+                <div className="absolute top-[3%] left-[5%] sm:top-[20px] sm:left-[30px] w-[60px] sm:w-[87px] animate-float">
                   <Image
                     src="/whychoose/33.png"
                     width={87}
-                    height={79.06}
-                    alt="element-1"
+                    height={79}
+                    alt="element-4"
                   />
                 </div>
               </div>
             </div>
+
             <div className="flex-1 space-y-6 mt-20">
               <h4 className="text-base font-medium text-[var(--subtitle)]">
                 Choose?
@@ -91,7 +98,7 @@ const WhyChooseUsComponent = () => {
               </div>
             </div>
           </div>
-          <div className="book-element-5">
+          <div className=" book-element-5">
             <Image
               src="/whychoose/why_ele-5.png"
               width={100}
@@ -99,7 +106,7 @@ const WhyChooseUsComponent = () => {
               alt="element-1"
             />
           </div>
-          <div className="book-element-6">
+          <div className=" book-element-6">
             <Image
               src="/whychoose/why_ele-6.png"
               width={32}
@@ -109,8 +116,8 @@ const WhyChooseUsComponent = () => {
           </div>
         </div>
       </div>
-      <div className="max-w-7xl py-20 mx-auto mt-10">
-        <div className="flex flex-row lg:flex-row gap-10">
+      <div className="max-w-7xl py-20 mx-auto relative px-5">
+        <div className="flex flex-col-reverse lg:flex-row gap-10">
           <div className="flex-1 space-y-6 mt-20">
             <h4 className="text-base font-medium text-[var(--subtitle)]">
               Choose?
@@ -151,13 +158,13 @@ const WhyChooseUsComponent = () => {
           <div className="flex-1 space-y-5">
             <div className="relative">
               <Image
-                src="/whychoose/skela.png"
+                src="/whychoose/why-2.png"
                 width={600}
                 height={600}
-                className=""
+                className="w-full sm:w-auto mx-auto"
                 alt="why"
               />
-              <div className="book-element-1">
+              <div className="absolute top-[85%] right-[10%] sm:top-[390px] sm:right-[60px] w-[60px] sm:w-[87px] animate-float">
                 <Image
                   src="/whychoose/30.png"
                   width={87}
@@ -165,7 +172,7 @@ const WhyChooseUsComponent = () => {
                   alt="element-1"
                 />
               </div>
-              <div className="book-element-2">
+              <div className="absolute top-[5%] right-[10%] sm:top-[30px] sm:right-[60px] w-[60px] sm:w-[87px] animate-float">
                 <Image
                   src="/whychoose/31.png"
                   width={87}
@@ -173,7 +180,7 @@ const WhyChooseUsComponent = () => {
                   alt="element-1"
                 />
               </div>
-              <div className="book-element-3">
+              <div className="absolute left-[5%] bottom-[30%] sm:left-[20px] sm:bottom-[150px] w-[60px] sm:w-[87px] animate-float">
                 <Image
                   src="/whychoose/32.png"
                   width={87}
@@ -181,7 +188,7 @@ const WhyChooseUsComponent = () => {
                   alt="element-1"
                 />
               </div>
-              <div className="book-element-4">
+              <div className="absolute top-[3%] left-[5%] sm:top-[20px] sm:left-[30px] w-[60px] sm:w-[87px] animate-float">
                 <Image
                   src="/whychoose/33.png"
                   width={87}
@@ -191,50 +198,70 @@ const WhyChooseUsComponent = () => {
               </div>
             </div>
           </div>
+          <div className="hidden lg:block  book-element-7">
+            <Image
+              src="/whychoose/why_ele-5.png"
+              width={100}
+              height={100}
+              alt="element-1"
+            />
+          </div>
+          <div className="hidden lg:block  book-element-8">
+            <Image
+              src="/whychoose/why_ele-6.png"
+              width={32}
+              height={32}
+              alt="element-1"
+            />
+          </div>
         </div>
       </div>
       <div className="bg-[var(--cardbackground)]">
-        <div className="max-w-7xl py-20 mx-auto mt-10">
-          <div className="flex flex-row lg:flex-row gap-10">
+        <div className="max-w-7xl py-20 mx-auto relative px-5">
+          <div className="flex flex-col lg:flex-row gap-10">
             <div className="flex-1 space-y-5">
               <div className="relative">
                 <Image
-                  src="/whychoose/skela.png"
+                  src="/whychoose/why-3.png"
                   width={600}
                   height={600}
-                  className=""
+                  className="w-full sm:w-auto mx-auto"
                   alt="why"
                 />
-                <div className="book-element-1">
+                {/* Floating Elements - Adjusted for Mobile */}
+                <div className="absolute top-[85%] right-[10%] sm:top-[390px] sm:right-[60px] w-[60px] sm:w-[87px] animate-float">
                   <Image
                     src="/whychoose/30.png"
                     width={87}
-                    height={79.06}
+                    height={79}
                     alt="element-1"
                   />
                 </div>
-                <div className="book-element-2">
+
+                <div className="absolute top-[5%] right-[10%] sm:top-[30px] sm:right-[60px] w-[60px] sm:w-[87px] animate-float">
                   <Image
                     src="/whychoose/31.png"
                     width={87}
-                    height={79.06}
-                    alt="element-1"
+                    height={79}
+                    alt="element-2"
                   />
                 </div>
-                <div className="book-element-3">
+
+                <div className="absolute left-[5%] bottom-[30%] sm:left-[20px] sm:bottom-[150px] w-[60px] sm:w-[87px] animate-float">
                   <Image
                     src="/whychoose/32.png"
                     width={87}
-                    height={79.06}
-                    alt="element-1"
+                    height={79}
+                    alt="element-3"
                   />
                 </div>
-                <div className="book-element-4">
+
+                <div className="absolute top-[3%] left-[5%] sm:top-[20px] sm:left-[30px] w-[60px] sm:w-[87px] animate-float">
                   <Image
                     src="/whychoose/33.png"
                     width={87}
-                    height={79.06}
-                    alt="element-1"
+                    height={79}
+                    alt="element-4"
                   />
                 </div>
               </div>
@@ -277,11 +304,27 @@ const WhyChooseUsComponent = () => {
                 </Link>
               </div>
             </div>
+            <div className="book-element-5">
+              <Image
+                src="/whychoose/why_ele-5.png"
+                width={100}
+                height={100}
+                alt="element-1"
+              />
+            </div>
+            <div className="book-element-6">
+              <Image
+                src="/whychoose/why_ele-6.png"
+                width={32}
+                height={32}
+                alt="element-1"
+              />
+            </div>
           </div>
         </div>
       </div>
-      <div className="max-w-7xl py-20 mx-auto mt-10">
-        <div className="flex flex-row lg:flex-row gap-10">
+      <div className="max-w-7xl py-20 mx-auto relative px-5">
+        <div className="flex flex-col-reverse lg:flex-row gap-10">
           <div className="flex-1 space-y-6 mt-20">
             <h4 className="text-base font-medium text-[var(--subtitle)]">
               Choose?
@@ -322,13 +365,13 @@ const WhyChooseUsComponent = () => {
           <div className="flex-1 space-y-5">
             <div className="relative">
               <Image
-                src="/whychoose/skela.png"
+                src="/whychoose/why-4.png"
                 width={600}
                 height={600}
-                className=""
+                className="w-full sm:w-auto mx-auto"
                 alt="why"
               />
-              <div className="book-element-1">
+              <div className=" absolute top-[85%] right-[10%] sm:top-[390px] sm:right-[60px] w-[60px] sm:w-[87px] animate-float">
                 <Image
                   src="/whychoose/30.png"
                   width={87}
@@ -336,7 +379,7 @@ const WhyChooseUsComponent = () => {
                   alt="element-1"
                 />
               </div>
-              <div className="book-element-2">
+              <div className="absolute top-[5%] right-[10%] sm:top-[30px] sm:right-[60px] w-[60px] sm:w-[87px] animate-float">
                 <Image
                   src="/whychoose/31.png"
                   width={87}
@@ -344,7 +387,7 @@ const WhyChooseUsComponent = () => {
                   alt="element-1"
                 />
               </div>
-              <div className="book-element-3">
+              <div className="absolute left-[5%] bottom-[30%] sm:left-[20px] sm:bottom-[150px] w-[60px] sm:w-[87px] animate-float">
                 <Image
                   src="/whychoose/32.png"
                   width={87}
@@ -352,7 +395,7 @@ const WhyChooseUsComponent = () => {
                   alt="element-1"
                 />
               </div>
-              <div className="book-element-4">
+              <div className="absolute top-[3%] left-[5%] sm:top-[20px] sm:left-[30px] w-[60px] sm:w-[87px] animate-float">
                 <Image
                   src="/whychoose/33.png"
                   width={87}
@@ -361,6 +404,22 @@ const WhyChooseUsComponent = () => {
                 />
               </div>
             </div>
+          </div>
+          <div className="hidden lg:block book-element-7">
+            <Image
+              src="/whychoose/why_ele-5.png"
+              width={100}
+              height={100}
+              alt="element-1"
+            />
+          </div>
+          <div className="hidden lg:block  book-element-8">
+            <Image
+              src="/whychoose/why_ele-6.png"
+              width={32}
+              height={32}
+              alt="element-1"
+            />
           </div>
         </div>
       </div>
