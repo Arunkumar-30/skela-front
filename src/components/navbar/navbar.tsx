@@ -14,14 +14,46 @@ const NavbarComponent = () => {
       href: "#studyabroad",
       label: "Study Abroad",
       dropdown: [
-        { label: "Uk", href: "/uk", img: "/country/" },
-        { label: "Toners", href: "/toner" },
-        { label: "Poly-Accessories", href: "/poly-accessories" },
-        { label: "HP-Peripherals", href: "/hp-peripherals" },
-        { label: "Hardware", href: "/hardware" },
+        { label: "Uk", href: "/uk", img: "/flags/ukFlag.jpg" },
+        { label: "Ireland", href: "/ireland", img: "/flags/irelandFlag.jpg" },
+        { label: "Germany", href: "/germany", img: "/flags/germanyFlag.jpg" },
+        { label: "France", href: "/france", img: "/flags/franceFlag.png" },
+        { label: "Italy", href: "/italy", img: "/flags/irelandFlag.jpg" },
+        { label: "Poland", href: "/poland", img: "/flags/polandFlag.png" },
+        {
+          label: "Australia",
+          href: "/australia",
+          img: "/flags/australiaFlag.jpg",
+        },
+        { label: "USA", href: "/usa", img: "/flags/usaFlag.jpg" },
+        { label: "Canada", href: "/canada", img: "/flags/canadaFlag.jpg" },
+        { label: "Dubai", href: "/dubai", img: "/flags/dubaiFlag.jpg" },
+        { label: "Europe", href: "/europe", img: "/flags/EUFlag.png" },
+        {
+          label: "Netherlands",
+          href: "/netherlands",
+          img: "/flags/netherlandsFlag.png",
+        },
+        { label: "Spain", href: "/spain", img: "/flags/spainFlag.png" },
+        {
+          label: "New Zealand",
+          href: "/new-zealand",
+          img: "/flags/newzealandFlag.jpg",
+        },
       ],
     },
-    { href: "/study-bg", label: "Study Bg" },
+    {
+      href: "/study-bg",
+      label: "Study Bag",
+      dropdown: [
+        { label: "IELTS", href: "/ielts", img: "/flags/ielts.png" },
+        { label: "TOEFL", href: "/toefl", img: "/flags/toefl.png" },
+        { label: "PTE", href: "/pte", img: "/flags/pte.png" },
+        { label: "GMAT", href: "/gmat", img: "/flags/gmat.png" },
+        { label: "GRE", href: "/gre", img: "/flags/gre.png" },
+        { label: "SAT", href: "/sat", img: "/flags/sat.png" },
+      ],
+    },
 
     { href: "/course-search", label: "Course Search" },
     { href: "/pay-uni-fees", label: "Pay Uni Fees" },
@@ -95,16 +127,35 @@ const NavbarComponent = () => {
                     {navItem.label}
                   </Link>
                   {navItem.dropdown && (
-                    <div className="absolute z-50 left-1/2 transform p-3 -translate-x-1/2 mt-5 border shadow-2xl bg-white scale-y-0 origin-top group-hover:scale-y-100 transition-transform flex border-none">
-                      <ul className="space-y-1 px-5">
+                    <div className="absolute left-1/2 z-50 transform p-3 -translate-x-1/2 mt-5 border shadow-2xl bg-white scale-y-0 origin-top group-hover:scale-y-100 transition-transform border-none w-64 md:w-80">
+                      <ul className="grid grid-cols-2 gap-3 px-3">
                         {navItem.dropdown.map((dropdownItem, idx) => (
-                          <li key={idx}>
-                            <Link
-                              href={dropdownItem.href}
-                              className="block text-gray-600 hover:text-[#00008f] py-1 rounded-md"
-                            >
-                              {dropdownItem.label}
-                            </Link>
+                          <li key={idx} className="relative group">
+                            <div className="flex items-center justify-between gap-5 ">
+                              <div className="flex items-center gap-4">
+                                <Image
+                                  src={dropdownItem.img}
+                                  height={30}
+                                  width={30}
+                                  alt={dropdownItem.label}
+                                />
+                                <Link
+                                  href={dropdownItem.href}
+                                  className="block text-gray-600 hover:text-[#00008f] py-1 rounded-md"
+                                >
+                                  {dropdownItem.label}
+                                </Link>
+                              </div>
+                              <div className="hidden group-hover:flex">
+                                <Image
+                                  src="/flags/arrow-right.svg"
+                                  height={10}
+                                  width={10}
+                                  className=""
+                                  alt="arrow-right"
+                                />
+                              </div>
+                            </div>
                           </li>
                         ))}
                       </ul>
