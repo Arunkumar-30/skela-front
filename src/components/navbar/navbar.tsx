@@ -43,7 +43,7 @@ const NavbarComponent = () => {
       ],
     },
     {
-      href: "/study-bg",
+      href: "/study-bag",
       label: "Study Bag",
       dropdown: [
         { label: "IELTS", href: "/ielts", img: "/flags/ielts.png" },
@@ -57,7 +57,7 @@ const NavbarComponent = () => {
 
     { href: "/course-search", label: "Course Search" },
     { href: "/pay-uni-fees", label: "Pay Uni Fees" },
-    { href: "/finance", label: "Finance" },
+    { href: "/edu-loan", label: "Edu Loan" },
   ];
 
   return (

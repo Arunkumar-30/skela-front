@@ -17,7 +17,7 @@ const countryData = {
     name: "Canada",
     lat: 56.1304,
     lon: -106.3468,
-    flag: "/country/canada.jpg",
+    flag: "/country/canda.jpg",
   },
   France: {
     name: "France",
@@ -51,6 +51,20 @@ const countryData = {
   },
   Peru: { name: "Peru", lat: -9.19, lon: -75.0152, flag: "/country/peru.jpg" },
 };
+const popupData = [
+  {
+    countryImg: "/country/e2.jpg",
+    title: "Discover all our academic desinations!",
+    subImg: "/country/usa-pen.jpg",
+    description:
+      "The United States, a global leader in education, hosts most of the world's top institutions and boasts more prestigious universities and Nobel laureate academics than other nations.",
+    subTitle: "A few facts ",
+    subDescription: [
+      "Over a million overseas students study in the United States.",
+      " The USA is home to more than 25% of the top 100 colleges in the world.",
+    ],
+  },
+];
 
 const MapComponent = () => {
   const [destination, setDestination] = useState(countryData.India);
@@ -74,14 +88,6 @@ const MapComponent = () => {
       }
     }, 300);
   };
-  useEffect(() => {
-    if (destination) {
-      // Show popup automatically after 1 second
-      setTimeout(() => {
-        setPopup(destination);
-      }, 300);
-    }
-  }, [destination]);
 
   return (
     <>
@@ -184,6 +190,37 @@ const MapComponent = () => {
             to={[destination.lat, destination.lon]}
           />
         </MapContainer>
+        {popup && (
+          <div
+            className="popup-container"
+            style={{
+              position: "fixed",
+              top: 0,
+              left: 0,
+              width: "100%",
+              height: "100%",
+              backgroundColor: "rgba(0, 0, 0, 0.8)",
+              color: "white",
+              padding: "20px",
+              zIndex: 1000,
+            }}
+          >
+            <h2>rr</h2>
+
+            <button
+              onClick={() => setPopup("")}
+              style={{
+                backgroundColor: "red",
+                padding: "10px",
+                color: "white",
+                border: "none",
+                cursor: "pointer",
+              }}
+            >
+              Close
+            </button>
+          </div>
+        )}
       </div>
     </>
   );

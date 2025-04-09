@@ -1,13 +1,12 @@
-import NavbarComponent from "@/components/navbar/navbar";
 import BannerComponent from "@/components/ui/Banner";
 import BlogComponent from "@/components/ui/Blog";
+import CountryComponent from "@/components/ui/Country";
 import LoanComponent from "@/components/ui/Loan";
 import NetworkComponent from "@/components/ui/Network";
 import OurPartnersComponent from "@/components/ui/OurPartners";
 
 import PortalComponent from "@/components/ui/Portal";
 import MapComponent from "@/components/ui/subCountry";
-import SliderNavigation from "@/components/ui/Vertical";
 
 import WhyChooseUsComponent from "@/components/ui/WhyChooseUs";
 
@@ -18,7 +17,6 @@ export default function Home() {
   return (
     <>
       <div className="max-w-7xl mx-auto">
-        <NavbarComponent />
         <BannerComponent />
       </div>
       <div className="container mx-auto h-[335px] relative px-5">
@@ -82,7 +80,8 @@ export default function Home() {
       <section>{/* <SliderNavigation /> */}</section>
       <WhyChooseUsComponent />
 
-      <MapComponent />
+      {/* <MapComponent /> */}
+      <CountryComponent />
 
       <section>
         <PortalComponent />
