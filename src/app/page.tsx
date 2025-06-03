@@ -6,7 +6,6 @@ import NetworkComponent from "@/components/ui/Network";
 import OurPartnersComponent from "@/components/ui/OurPartners";
 
 import PortalComponent from "@/components/ui/Portal";
-import MapComponent from "@/components/ui/subCountry";
 
 import WhyChooseUsComponent from "@/components/ui/WhyChooseUs";
 

@@ -3,7 +3,6 @@
 import Link from "next/link";
 import TrustedPartner from "./trustedPartner";
 import CircleComponent from "./circle";
-import CircularSlider from "./circle";
 
 const BannerComponent = () => {
   return (

@@ -49,8 +49,8 @@ const NetworkComponent = () => {
                 <h2 className="text-lg sm:text-xl font-bold">Quick Process</h2>
                 <p className="text-xs sm:text-sm font-medium">
                   The online form usually takes less than 10 minutes to
-                  complete. So before you even finish your cup of tea, you'll
-                  already have your request submitted.
+                  complete. So before you even finish your cup of tea,
+                  you&apos;ll already have your request submitted.
                 </p>
               </div>
               <div className="flex flex-shrink-0">

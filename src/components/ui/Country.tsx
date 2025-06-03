@@ -103,7 +103,7 @@ const CountryComponent = () => {
                     about the country.
                   </p>
                   <Link
-                    href="#"
+                    href="/uk/university-colleges-list"
                     className="bg-gradient-to-r from-[#9181F4] to-[#5038ED] rounded-2xl text-white text-sm pl-1 pr-1"
                   >
                     Read more
